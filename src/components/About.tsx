@@ -31,18 +31,15 @@ const About = () => {
             <Card className="p-6 bg-card-gradient border-border shadow-elegant">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Who I Am</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm a passionate full-stack developer with 5+ years of experience creating 
-                digital solutions that combine beautiful design with robust functionality. 
-                I love turning complex problems into simple, elegant designs.
+              I’m a passionate .NET developer with 3+ years of experience building robust, scalable web applications and services. 
+              I specialize in creating clean, maintainable code and turning complex business requirements into efficient, user-friendly solutions. With a focus on both backend architecture and frontend integration, I strive to deliver seamless, high-performance applications.
               </p>
             </Card>
             
             <Card className="p-6 bg-card-gradient border-border shadow-elegant">
               <h3 className="text-2xl font-semibold mb-4 text-primary">What I Do</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I specialize in React, Node.js, and modern web technologies. From concept 
-                to deployment, I build scalable applications that provide exceptional user 
-                experiences and drive business results.
+               I specialize in .NET Core and Angular, leveraging modern web technologies to build scalable, high-performance applications. From concept to deployment, I develop end-to-end solutions that deliver exceptional user experiences and drive business outcomes.
               </p>
             </Card>
             

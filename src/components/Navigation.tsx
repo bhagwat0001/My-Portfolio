@@ -20,7 +20,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <span className="text-2xl font-bold bg-text-gradient bg-clip-text text-transparent">
-              Alex.dev
+              Bhagwat
             </span>
           </div>
 

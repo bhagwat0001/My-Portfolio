@@ -73,7 +73,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">alex@developer.com</p>
+                    <p className="text-muted-foreground">bhagvaty83@gmail.com</p>
                   </div>
                 </div>
               </Card>
@@ -85,7 +85,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 9131883795</p>
                   </div>
                 </div>
               </Card>
@@ -97,7 +97,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Location</h4>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-muted-foreground">Ahmedabad, Gujrat IN</p>
                   </div>
                 </div>
               </Card>
@@ -106,7 +106,7 @@ const Contact = () => {
             <Card className="p-6 bg-hero-gradient shadow-glow border border-primary/20">
               <h4 className="font-semibold text-primary-foreground mb-2">Available for Freelance</h4>
               <p className="text-primary-foreground/80 text-sm">
-                Currently accepting new projects for Q2 2024. Let's build something amazing together!
+                Currently accepting new projects for Q3 2025. Let's build something amazing together!
               </p>
             </Card>
           </div>

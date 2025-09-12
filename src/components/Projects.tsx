@@ -7,48 +7,48 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      image: "🛒",
+      image: "/src/assets/E-Commerce.jpg",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       github: "#",
       live: "#"
     },
     {
-      title: "Task Management App",
+      title: "TP SOW Portal App",
       description: "Collaborative task management application with real-time updates, team collaboration features, and advanced analytics.",
-      image: "📋",
-      tech: ["Next.js", "TypeScript", "MongoDB", "Socket.io"],
+      image: "/src/assets/TP-Portal.png",
+      tech: [".Net Core MVC", "C#", 'EntityFramework', "SQL Server", "WSDL"],
       github: "#",
       live: "#"
     },
     {
-      title: "AI Chat Assistant",
-      description: "AI-powered chat application with natural language processing, context awareness, and integration with multiple AI models.",
-      image: "🤖",
-      tech: ["React", "Python", "OpenAI", "FastAPI"],
+      title: "Vendor Portal",
+      description: "Vendor management system with secure login, profile management, Invoice Management, and order tracking functionalities.",
+      image: "/src/assets/Vendor_Portal.webp",
+      tech: [".Net Core", "C#", "Sql Server", "Wsdl"],
       github: "#",
       live: "#"
     },
     {
-      title: "Weather Dashboard",
-      description: "Beautiful weather dashboard with interactive maps, forecasts, and location-based services. Built with modern React patterns.",
-      image: "🌤️",
-      tech: ["React", "D3.js", "Weather API", "Tailwind"],
+      title: "Success Factor",
+      description: "Integration of SuccessFactors with internal HR systems for seamless data synchronization and reporting.",
+      image: "/src/assets/sap.jpg",
+      tech: [".Net Core", "C#", "WEP API", "Sql Server"],
       github: "#",
       live: "#"
     },
     {
-      title: "Social Media Analytics",
-      description: "Comprehensive analytics dashboard for social media metrics with data visualization and automated reporting features.",
-      image: "📊",
-      tech: ["Vue.js", "Python", "Chart.js", "Django"],
+      title: "Account Information System",
+      description: "A comprehensive account management system with features like account creation, transaction history, and reporting tools.",
+      image: "/src/assets/AIS.jpg",
+      tech: ["ASP.Net MVC", "C#", "Sql Server", "WSDL"],
       github: "#",
       live: "#"
     },
     {
-      title: "Real Estate Platform",
-      description: "Modern real estate platform with property listings, virtual tours, and advanced search functionality.",
-      image: "🏠",
-      tech: ["React", "Express", "MongoDB", "Mapbox"],
+      title: "Talent Submission Portal",
+      description: "A portal for submitting and tracking talent applications, with role-based access and notification system.",
+      image: "/src/assets/Talent.jpg",
+      tech: [".Net Core 9", "C#", "Sql Server", "CQRS Pattern"],
       github: "#",
       live: "#"
     }
@@ -75,7 +75,7 @@ const Projects = () => {
               {/* Project Image/Icon */}
               <div className="h-48 bg-muted/30 flex items-center justify-center border-b border-border group-hover:bg-primary/5 transition-colors duration-300">
                 <span className="text-6xl group-hover:scale-110 transition-transform duration-300">
-                  {project.image}
+                 <img src={project.image} alt={project.title}  style={{ width: '100%', height: '100%' }} />
                 </span>
               </div>
               

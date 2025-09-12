@@ -21,7 +21,7 @@ const Hero = () => {
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="block text-foreground mb-2">Hello, I'm</span>
             <span className="bg-text-gradient bg-clip-text text-transparent">
-              Alex Developer
+              Bhagwat Prasad
             </span>
           </h1>
           
