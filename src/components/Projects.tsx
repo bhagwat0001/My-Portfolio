@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      image: "/src/assets/E-Commerce.jpg",
+      image: "/E-Commerce.jpg",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       github: "#",
       live: "#"
@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: "TP SOW Portal App",
       description: "Collaborative task management application with real-time updates, team collaboration features, and advanced analytics.",
-      image: "/src/assets/TP-Portal.png",
+      image: "/TP-Portal.png",
       tech: [".Net Core MVC", "C#", 'EntityFramework', "SQL Server", "WSDL"],
       github: "#",
       live: "#"
@@ -23,7 +23,7 @@ const Projects = () => {
     {
       title: "Vendor Portal",
       description: "Vendor management system with secure login, profile management, Invoice Management, and order tracking functionalities.",
-      image: "/src/assets/Vendor_Portal.webp",
+      image: "/Vendor_Portal.webp",
       tech: [".Net Core", "C#", "Sql Server", "Wsdl"],
       github: "#",
       live: "#"
@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: "Success Factor",
       description: "Integration of SuccessFactors with internal HR systems for seamless data synchronization and reporting.",
-      image: "/src/assets/sap.jpg",
+      image: "/sap.jpg",
       tech: [".Net Core", "C#", "WEP API", "Sql Server"],
       github: "#",
       live: "#"
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "Account Information System",
       description: "A comprehensive account management system with features like account creation, transaction history, and reporting tools.",
-      image: "/src/assets/AIS.jpg",
+      image: "/AIS.jpg",
       tech: ["ASP.Net MVC", "C#", "Sql Server", "WSDL"],
       github: "#",
       live: "#"
@@ -47,7 +47,7 @@ const Projects = () => {
     {
       title: "Talent Submission Portal",
       description: "A portal for submitting and tracking talent applications, with role-based access and notification system.",
-      image: "/src/assets/Talent.jpg",
+      image: "/Talent.jpg",
       tech: [".Net Core 9", "C#", "Sql Server", "CQRS Pattern"],
       github: "#",
       live: "#"
