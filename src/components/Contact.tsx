@@ -1,10 +1,51 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+
 const Contact = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess("");
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form)
+      });
+      if (res.ok) {
+        setSuccess("Message sent successfully!");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const data = await res.json();
+        setError(data.error || "Failed to send message.");
+      }
+    } catch (err) {
+      setError("Failed to send message.");
+    }
+    setLoading(false);
+  };
+
   return (
     <section id="contact" className="py-20 px-6 bg-muted/20">
       <div className="container mx-auto max-w-6xl">
@@ -16,45 +57,45 @@ const Contact = () => {
             Ready to work together? Let's discuss your next project
           </p>
         </div>
-        
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <Card className="p-8 bg-card-gradient border-border shadow-elegant">
             <h3 className="text-2xl font-semibold mb-6 text-primary">Send a Message</h3>
-            
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2 text-foreground">Name</label>
-                  <Input placeholder="Your Name" className="bg-background/50 border-border" />
+                  <Input name="name" value={form.name} onChange={handleChange} placeholder="Your Name" className="bg-background/50 border-border" required />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 text-foreground">Email</label>
-                  <Input type="email" placeholder="your@email.com" className="bg-background/50 border-border" />
+                  <Input name="email" type="email" value={form.email} onChange={handleChange} placeholder="your@email.com" className="bg-background/50 border-border" required />
                 </div>
               </div>
-              
               <div>
                 <label className="block text-sm font-medium mb-2 text-foreground">Subject</label>
-                <Input placeholder="Project Discussion" className="bg-background/50 border-border" />
+                <Input name="subject" value={form.subject} onChange={handleChange} placeholder="Project Discussion" className="bg-background/50 border-border" required />
               </div>
-              
               <div>
                 <label className="block text-sm font-medium mb-2 text-foreground">Message</label>
                 <Textarea 
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   placeholder="Tell me about your project..." 
                   rows={6}
                   className="bg-background/50 border-border resize-none"
+                  required
                 />
               </div>
-              
-              <Button variant="hero" size="lg" className="w-full">
-                Send Message
+              {success && <div className="text-green-600 font-medium">{success}</div>}
+              {error && <div className="text-red-600 font-medium">{error}</div>}
+              <Button variant="hero" size="lg" className="w-full" type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
-          
-          {/* Contact Info */}
+          {/* Contact Info ...existing code... */}
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-primary">Let's Connect</h3>
@@ -64,7 +105,6 @@ const Contact = () => {
                 to get back to you!
               </p>
             </div>
-            
             <div className="space-y-6">
               <Card className="p-6 bg-card-gradient border-border shadow-elegant hover:shadow-glow transition-all duration-300">
                 <div className="flex items-center gap-4">
@@ -77,7 +117,6 @@ const Contact = () => {
                   </div>
                 </div>
               </Card>
-              
               <Card className="p-6 bg-card-gradient border-border shadow-elegant hover:shadow-glow transition-all duration-300">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
@@ -89,7 +128,6 @@ const Contact = () => {
                   </div>
                 </div>
               </Card>
-              
               <Card className="p-6 bg-card-gradient border-border shadow-elegant hover:shadow-glow transition-all duration-300">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-primary/10 rounded-lg">
@@ -102,7 +140,6 @@ const Contact = () => {
                 </div>
               </Card>
             </div>
-            
             <Card className="p-6 bg-hero-gradient shadow-glow border border-primary/20">
               <h4 className="font-semibold text-primary-foreground mb-2">Available for Freelance</h4>
               <p className="text-primary-foreground/80 text-sm">
