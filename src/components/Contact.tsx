@@ -27,9 +27,9 @@ const Contact = () => {
     setSuccess("");
     setError("");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://emailsender-1-f8h9.onrender.com/api/Email/sendEmail", {
         
-        method: "POST",
+        method: "Post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
       });
@@ -143,7 +143,7 @@ const Contact = () => {
             <Card className="p-6 bg-hero-gradient shadow-glow border border-primary/20">
               <h4 className="font-semibold text-primary-foreground mb-2">Available for Freelance</h4>
               <p className="text-primary-foreground/80 text-sm">
-                Currently accepting new projects for Q3 2025. Let's build something amazing together!
+                Currently accepting new projects for Q4 2025. Let's build something amazing together!
               </p>
             </Card>
           </div>
