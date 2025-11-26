@@ -1,0 +1,120 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+const HireMe = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: any) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    // Simulating form submission
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 500);
+  };
+
+  return (
+    <section className="py-20 px-6 flex justify-center">
+      <div className="max-w-xl w-full">
+
+        {!submitted ? (
+          <Card className="shadow-xl border-border bg-card-gradient">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-center">
+                Hire Me
+              </CardTitle>
+              <p className="text-center text-muted-foreground">
+                Let’s work together! Fill the form and I’ll get back to you soon.
+              </p>
+            </CardHeader>
+
+            <CardContent>
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <div>
+                  <label className="text-sm font-medium">Your Name</label>
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Email Address</label>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium">Message</label>
+                  <Textarea
+                    name="message"
+                    placeholder="Tell me about your project..."
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="lg"
+                  className="w-full text-lg"
+                >
+                  Submit
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        ) : (
+          <Card className="shadow-xl border-border p-10 bg-card-gradient">
+            <h2 className="text-3xl font-bold text-center mb-3">
+              🎉 Thank You!
+            </h2>
+            <p className="text-center text-muted-foreground text-lg">
+              Your form has been submitted successfully.
+              <br />
+              I will contact you soon.
+            </p>
+
+            <div className="flex justify-center mt-6">
+              <Button
+                variant="portfolio"
+                size="lg"
+                onClick={() => setSubmitted(false)}
+              >
+                Submit Another Response
+              </Button>
+            </div>
+          </Card>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default HireMe;

@@ -1,125 +1,160 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, FileText, Github } from "lucide-react";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
       title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
+      description:
+        "Developed a scalable e-commerce system with user authentication, product management, secure checkout, and integrated payment gateway.",
       image: "/E-Commerce.jpg",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      github: "#",
-      live: "#"
+      caseStudy: "/case-studies/E-Commerce%20Platform.pdf",
+      live: "#",
     },
     {
       title: "TP SOW Portal App",
-      description: "Collaborative task management application with real-time updates, team collaboration features, and advanced analytics.",
+      description:
+        "A complete SOW and task automation portal with approval workflows, role-based authentication, reporting dashboards, and WSDL-based service integrations.",
       image: "/TP-Portal.png",
-      tech: [".Net Core MVC", "C#", 'EntityFramework', "SQL Server", "WSDL"],
-      github: "#",
-      live: "#"
+      tech: [".NET Core MVC", "C#", "Entity Framework", "SQL Server", "SOAP"],
+      caseStudy: "/case-studies/TP%20SOW%20Portal.pdf",
+      live: "https://wf5.myhcl.com/TPSOW",
     },
     {
       title: "Vendor Portal",
-      description: "Vendor management system with secure login, profile management, Invoice Management, and order tracking functionalities.",
+      description:
+        "Vendor onboarding and invoice management system with authentication, contract tracking, and secure internal communication.",
       image: "/Vendor_Portal.webp",
-      tech: [".Net Core", "C#", "Sql Server", "Wsdl"],
-      github: "#",
-      live: "#"
+      tech: [".NET Core", "C#", "SQL Server", "SOAP Services"],
+      caseStudy: "/case-studies/Vendor%20Portal.pdf",
+      live: "https://wf6.myhcl.com/VendorPortal",
     },
     {
-      title: "Success Factor",
-      description: "Integration of SuccessFactors with internal HR systems for seamless data synchronization and reporting.",
+      title: "SuccessFactors Integration",
+      description:
+        "Integrated SAP SuccessFactors with internal HR system for employee master sync, payroll mapping, and automated data scheduling.",
       image: "/sap.jpg",
-      tech: [".Net Core", "C#", "WEP API", "Sql Server"],
-      github: "#",
-      live: "#"
+      tech: [".NET Core", "C#", "Web API", "SQL Server"],
+      caseStudy: "/case-studies/SuccessFactors%20Integration.pdf",
+      live: "https://wf5.myhcl.com/SFIntegration",
     },
     {
       title: "Account Information System",
-      description: "A comprehensive account management system with features like account creation, transaction history, and reporting tools.",
+      description:
+        "A complete AIS system including account creation, ledger management, transaction history, and custom report generator.",
       image: "/AIS.jpg",
-      tech: ["ASP.Net MVC", "C#", "Sql Server", "WSDL"],
-      github: "#",
-      live: "#"
+      tech: ["ASP.NET MVC", "C#", "SQL Server", "SOAP"],
+      caseStudy: "/case-studies/Account%20Information%20System.pdf",
+      live: "https://wf5.myhcl.com/AIS",
     },
     {
       title: "Talent Submission Portal",
-      description: "A portal for submitting and tracking talent applications, with role-based access and notification system.",
+      description:
+        "Talent submission and tracking platform with CQRS pattern, role-based control, and secure document uploads.",
       image: "/Talent.jpg",
-      tech: [".Net Core 9", "C#", "Sql Server", "CQRS Pattern"],
-      github: "#",
-      live: "#"
-    }
+      tech: [".NET Core 9", "C#", "SQL Server", "CQRS"],
+      caseStudy: "/case-studies/Talent%20Submission%20Portal.pdf",
+      live: "#",
+    },
   ];
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
     <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="bg-text-gradient bg-clip-text text-transparent">Projects</span>
+            Featured{" "}
+            <span className="bg-text-gradient bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A showcase of my recent work and personal projects
+            A showcase of my professional contributions and application
+            development experience
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card 
+          {visibleProjects.map((project, index) => (
+            <Card
               key={index}
               className="group bg-card-gradient border-border shadow-elegant hover:shadow-glow transition-all duration-500 hover:scale-105 overflow-hidden"
             >
-              {/* Project Image/Icon */}
               <div className="h-48 bg-muted/30 flex items-center justify-center border-b border-border group-hover:bg-primary/5 transition-colors duration-300">
-                <span className="text-6xl group-hover:scale-110 transition-transform duration-300">
-                 <img src={project.image} alt={project.title}  style={{ width: '100%', height: '100%' }} />
-                </span>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              
-              {/* Project Content */}
+
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+
+                <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
-                
-                {/* Tech Stack */}
+
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-2 py-1 bg-secondary/50 text-xs rounded border border-border/50 text-foreground"
+                  {project.tech.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 bg-secondary/50 text-xs rounded border border-border/50"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                
-                {/* Action Buttons */}
+
                 <div className="flex gap-3">
-                  <Button variant="portfolio" size="sm" className="flex-1">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button variant="hero" size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
+                 <a href={project.caseStudy}
+                 target="_blank" 
+                  download
+                  className="flex-1"
+                >
+                    <Button variant="portfolio" size="sm" className="w-full">
+                      <FileText className="w-4 h-4 mr-2" /> Case Study
+                      </Button>
+                </a>
+
+                 {project.live !== "#" ? (
+    <a
+      href={project.live}
+      target="_blank"
+      className="flex-1"
+    >
+      <Button variant="hero" size="sm" className="w-full">
+        <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
+      </Button>
+    </a>
+  ) : (
+    <Button
+      variant="hero"
+      size="sm"
+      disabled
+      className="flex-1 opacity-50 cursor-not-allowed"
+    >
+      <ExternalLink className="w-4 h-4 mr-2" /> No Demo
+    </Button>
+  )}
                 </div>
               </div>
             </Card>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
-            View All Projects
+          <Button variant="hero" size="lg" onClick={() => setShowAll(!showAll)}>
+            {showAll ? "Show Less" : "View All Projects"}
           </Button>
         </div>
       </div>
