@@ -41,19 +41,23 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="/Hireme">
-              <Button variant="hero" size="sm">
+            <a href="#hireme">
+              <Button
+                variant="hero"
+                size="sm"
+                className="w-full"
+              >
                 Hire Me
-                </Button>
+              </Button>
             </a>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
+            <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -75,13 +79,12 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="pt-4">
-                <a href="/Hireme">
+                <a href="#Hireme" onClick={() => setIsOpen(false)}>
                   <Button
-                    variant="hero"
-                    size="sm"
-                    className="w-full"
-                    onClick={() => setIsOpen(false)}
-                  >
+                   variant="hero" 
+                   size="sm" 
+                   className="w-full"
+                   >
                     Hire Me
                   </Button>
                 </a>

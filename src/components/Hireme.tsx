@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,11 +13,13 @@ const HireMe = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Simulating form submission
@@ -27,7 +29,7 @@ const HireMe = () => {
   };
 
   return (
-    <section className="py-20 px-6 flex justify-center">
+    <section id="hireme" className="py-20 px-6 flex justify-center">
       <div className="max-w-xl w-full">
 
         {!submitted ? (
@@ -44,8 +46,11 @@ const HireMe = () => {
             <CardContent>
               <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
-                  <label className="text-sm font-medium">Your Name</label>
+                  <label className="text-sm font-medium" htmlFor="name">
+                    Your Name
+                  </label>
                   <Input
+                    id="name"
                     type="text"
                     name="name"
                     placeholder="John Doe"
@@ -56,8 +61,11 @@ const HireMe = () => {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium">Email Address</label>
+                  <label className="text-sm font-medium" htmlFor="email">
+                    Email Address
+                  </label>
                   <Input
+                    id="email"
                     type="email"
                     name="email"
                     placeholder="john@example.com"
@@ -68,8 +76,11 @@ const HireMe = () => {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium">Message</label>
+                  <label className="text-sm font-medium" htmlFor="message">
+                    Message
+                  </label>
                   <Textarea
+                    id="message"
                     name="message"
                     placeholder="Tell me about your project..."
                     value={form.message}

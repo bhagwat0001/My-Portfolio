@@ -4,7 +4,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["Angular", "TypeScript", "Next.js", "Bootstrap CSS", "Html5/CSS3","JQuery/Javascript" ],
+      skills: ["Angular", "React", "TypeScript", "Next.js", "Bootstrap CSS", "Html5/CSS3","JQuery/Javascript" ],
       icon: "🎨"
     },
     {
@@ -19,7 +19,7 @@ const Skills = () => {
     },
     {
       title: "Mobile & Other",
-      skills: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Stripe"],
+      skills: ["React Native", "Stripe"],
       icon: "📱"
     }
   ];
@@ -65,7 +65,7 @@ const Skills = () => {
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-semibold mb-6 text-primary">Always Learning</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {["AI/ML", "Web3", "Rust", "Go", "Kubernetes", "Microservices"].map((skill) => (
+            {["AI/ML", "Web3", "Kubernetes", "Microservices"].map((skill) => (
               <span 
                 key={skill}
                 className="px-4 py-2 bg-hero-gradient text-primary-foreground rounded-full text-sm font-medium shadow-glow"
