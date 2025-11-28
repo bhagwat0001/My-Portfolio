@@ -12,6 +12,7 @@ const HireMe = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,6 +22,15 @@ const HireMe = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Validate message (at least 3 words)
+    const wordCount = form.message.trim().split(/\s+/).length;
+    if (wordCount < 3) {
+      setError("Message must contain at least 3 words.");
+      return;
+    }
+
+    setError("");
 
     // Simulating form submission
     setTimeout(() => {
@@ -88,6 +98,9 @@ const HireMe = () => {
                     required
                     rows={5}
                   />
+                  {error && (
+                    <p className="text-red-500 text-sm mt-1">{error}</p>
+                  )}
                 </div>
 
                 <Button

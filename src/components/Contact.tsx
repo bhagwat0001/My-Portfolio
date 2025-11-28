@@ -143,7 +143,7 @@ const Contact = () => {
             <Card className="p-6 bg-hero-gradient shadow-glow border border-primary/20">
               <h4 className="font-semibold text-primary-foreground mb-2">Available for Freelance</h4>
               <p className="text-primary-foreground/80 text-sm">
-                Currently accepting new projects for Q4 2025. Let's build something amazing together!
+                Currently accepting new projects for Q4 2025 and Q1 2026. Let's build something amazing together!
               </p>
             </Card>
           </div>

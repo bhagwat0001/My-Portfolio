@@ -9,12 +9,12 @@ const Skills = () => {
     },
     {
       title: "Backend",
-      skills: ["Node.js", "C#", "Express", "PostgreSQL", "SQL Server"],
+      skills: ["Node.js", "C#", "Express", "PostgreSQL", "SQL Server", ".NET Core", "Entity Framework", "ADO.NET", "WSDL"],
       icon: "⚙️"
     },
     {
       title: "Tools & Cloud",
-      skills: [ "Docker", "Git", "TFS","Visual Studio"],
+      skills: [ "Docker", "Git", "TFS","Visual Studio","VS Code"],
       icon: "🛠️"
     },
     {
