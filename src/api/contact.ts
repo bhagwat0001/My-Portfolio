@@ -12,19 +12,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
-  // Configure your SMTP transport
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'bhagvaty83@gmail.com',
-      pass: 'YOUR_APP_PASSWORD' // Use App Password for Gmail
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD
     }
   });
 
   try {
     await transporter.sendMail({
-      from: email,
-      to: 'bhagvaty83@gmail.com',
+      from: process.env.SMTP_USER,
+      to: process.env.CONTACT_EMAIL || 'manishayadavp21@gmail.com',
+      replyTo: email,
       subject: `[Portfolio] ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong><br/>${message}</p>`

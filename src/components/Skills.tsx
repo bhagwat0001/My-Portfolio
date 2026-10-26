@@ -1,57 +1,91 @@
 import { Card } from "@/components/ui/card";
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      skills: ["Angular", "React", "TypeScript", "Next.js", "Bootstrap CSS", "Html5/CSS3","JQuery/Javascript" ],
-      icon: "🎨"
-    },
-    {
-      title: "Backend",
-      skills: ["Node.js", "C#", "Express", "PostgreSQL", "SQL Server", ".NET Core", "Entity Framework", "ADO.NET", "WSDL"],
-      icon: "⚙️"
-    },
-    {
-      title: "Tools & Cloud",
-      skills: [ "Docker", "Git", "TFS","Visual Studio","VS Code"],
-      icon: "🛠️"
-    },
-    {
-      title: "Mobile & Other",
-      skills: ["React Native", "Stripe"],
-      icon: "📱"
-    }
-  ];
+const skillCategories = [
+  {
+    title: "Placement & Employer Relations",
+    skills: [
+      "Placement coordination",
+      "Employer partnerships",
+      "Recruitment drives",
+      "Candidate counseling",
+      "Interview preparation",
+      "Placement retention",
+    ],
+    icon: "🤝",
+  },
+  {
+    title: "Training & Candidate Support",
+    skills: [
+      "Logistics operations",
+      "Warehouse management",
+      "Supply-chain fundamentals",
+      "Employability skills",
+      "Rural youth mobilization",
+      "Training delivery",
+    ],
+    icon: "🎓",
+  },
+  {
+    title: "Quality & Program Operations",
+    skills: [
+      "DDU-GKY programs",
+      "Quality assurance",
+      "Audit readiness",
+      "SOP compliance",
+      "Batch documentation",
+      "MIS & reporting",
+    ],
+    icon: "✅",
+  },
+  {
+    title: "Tools & Systems",
+    skills: [
+      "MS Word",
+      "MS Excel",
+      "MS PowerPoint",
+      "AEBAS",
+      "SIP",
+      "KB",
+      "SF",
+      "SOP",
+    ],
+    icon: "🛠️",
+  },
+];
 
+const Skills = () => {
   return (
     <section id="skills" className="py-20 px-6 bg-muted/20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="bg-text-gradient bg-clip-text text-transparent">Skills</span>
+            Core <span className="bg-text-gradient bg-clip-text text-transparent">Skills</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            Program delivery, candidate development, and placement operations
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => (
-            <Card 
-              key={index} 
-              className="p-6 bg-card-gradient border-border shadow-elegant hover:shadow-glow transition-all duration-300 hover:scale-105"
+          {skillCategories.map((category) => (
+            <Card
+              key={category.title}
+              className="p-6 bg-card-gradient border-border shadow-elegant hover:shadow-glow transition-all duration-300"
             >
               <div className="text-center mb-4">
-                <div className="text-4xl mb-2">{category.icon}</div>
-                <h3 className="text-xl font-semibold text-primary">{category.title}</h3>
+                <div className="text-4xl mb-2" aria-hidden="true">
+                  {category.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-primary">
+                  {category.title}
+                </h3>
               </div>
-              
+
               <div className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <div 
-                    key={skillIndex}
-                    className="px-3 py-2 bg-secondary/50 rounded-lg text-sm text-center border border-border/50 hover:bg-primary/10 transition-colors duration-200"
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="px-3 py-2 bg-secondary/50 rounded-lg text-sm text-center border border-border/50"
                   >
                     {skill}
                   </div>
@@ -60,19 +94,38 @@ const Skills = () => {
             </Card>
           ))}
         </div>
-        
-        {/* Additional Skills */}
-        <div className="mt-12 text-center">
-          <h3 className="text-2xl font-semibold mb-6 text-primary">Always Learning</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {["AI/ML", "Web3", "Kubernetes", "Microservices"].map((skill) => (
-              <span 
-                key={skill}
-                className="px-4 py-2 bg-hero-gradient text-primary-foreground rounded-full text-sm font-medium shadow-glow"
-              >
-                {skill}
-              </span>
-            ))}
+
+        <div className="grid md:grid-cols-2 gap-8 mt-12">
+          <div className="text-center">
+            <h3 className="text-xl font-semibold mb-4 text-primary">Languages</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["English", "Hindi"].map((language) => (
+                <span
+                  key={language}
+                  className="px-4 py-2 bg-secondary/50 border border-border/50 rounded-full text-sm"
+                >
+                  {language}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="text-center">
+            <h3 className="text-xl font-semibold mb-4 text-primary">Interests</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                "Networking & monitoring",
+                "Public speaking & teaching",
+                "Travel & exploration",
+                "Reading",
+              ].map((interest) => (
+                  <span
+                    key={interest}
+                    className="px-4 py-2 bg-secondary/50 border border-border/50 rounded-full text-sm"
+                  >
+                    {interest}
+                  </span>
+                ))}
+            </div>
           </div>
         </div>
       </div>

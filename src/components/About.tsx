@@ -9,7 +9,7 @@ const About = () => {
             About <span className="bg-text-gradient bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate developer with expertise in modern web technologies
+            Connecting people, training, and employers to create lasting career outcomes
           </p>
         </div>
         
@@ -17,9 +17,11 @@ const About = () => {
           {/* Profile Image */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-80 h-80 rounded-2xl bg-card-gradient border border-border shadow-elegant overflow-hidden">
-                <div className="w-full h-full bg-muted flex items-center justify-center">
-                  <span className="text-6xl">👨‍💻</span>
+              <div className="w-80 h-80 rounded-2xl bg-card-gradient border border-border shadow-elegant overflow-hidden flex items-center justify-center">
+                <div className="w-56 h-56 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <span className="text-7xl font-bold bg-text-gradient bg-clip-text text-transparent">
+                    MY
+                  </span>
                 </div>
               </div>
               <div className="absolute -inset-4 bg-hero-gradient opacity-20 rounded-3xl -z-10 blur-xl"></div>
@@ -31,24 +33,21 @@ const About = () => {
             <Card className="p-6 bg-card-gradient border-border shadow-elegant">
               <h3 className="text-2xl font-semibold mb-4 text-primary">Who I Am</h3>
               <p className="text-muted-foreground leading-relaxed">
-              I’m a passionate .NET developer with 3+ years of experience building robust, scalable web applications and services. 
-              I specialize in creating clean, maintainable code and turning complex business requirements into efficient, user-friendly solutions. With a focus on both backend architecture and frontend integration, I strive to deliver seamless, high-performance applications.
+              I’m a placement, training, and quality professional with more than four years of experience supporting DDU-GKY programs. My work spans candidate mobilization and counseling, employer partnerships, recruitment coordination, training quality, and placement follow-up.
               </p>
             </Card>
             
             <Card className="p-6 bg-card-gradient border-border shadow-elegant">
               <h3 className="text-2xl font-semibold mb-4 text-primary">What I Do</h3>
               <p className="text-muted-foreground leading-relaxed">
-               I specialize in .NET Core and Angular, leveraging modern web technologies to build scalable, high-performance applications. From concept to deployment, I develop end-to-end solutions that deliver exceptional user experiences and drive business outcomes.
+               I coordinate the complete journey from training to employment: preparing candidates, organizing recruitment drives, matching people with suitable roles, and maintaining strong employer relationships. I also manage program documentation, MIS, audits, and compliance.
               </p>
             </Card>
             
             <Card className="p-6 bg-card-gradient border-border shadow-elegant">
               <h3 className="text-2xl font-semibold mb-4 text-primary">My Approach</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I believe in clean code, thoughtful design, and continuous learning. 
-                Every project is an opportunity to create something meaningful and push 
-                the boundaries of what's possible on the web.
+                I focus on practical candidate support, accurate records, and dependable follow-through. I value clear communication with candidates, training teams, and employers, while helping programs meet quality and placement goals.
               </p>
             </Card>
           </div>

@@ -9,7 +9,8 @@ const Navigation = () => {
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -20,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <span className="text-2xl font-bold bg-text-gradient bg-clip-text text-transparent">
-              Bhagwat
+              Maneesha
             </span>
           </div>
 
@@ -41,13 +42,13 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="#hireme">
+            <a href="#contact">
               <Button
                 variant="hero"
                 size="sm"
                 className="w-full"
               >
-                Hire Me
+                Contact Me
               </Button>
             </a>
           </div>
@@ -79,13 +80,13 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="pt-4">
-                <a href="#Hireme" onClick={() => setIsOpen(false)}>
+                <a href="#contact" onClick={() => setIsOpen(false)}>
                   <Button
                    variant="hero" 
                    size="sm" 
                    className="w-full"
                    >
-                    Hire Me
+                    Contact Me
                   </Button>
                 </a>
               </div>

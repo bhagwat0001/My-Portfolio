@@ -2,9 +2,9 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
+import Experience from "@/components/Projects";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
-import HireMe from "@/components/Hireme";
 
 const Index = () => {
   return (
@@ -14,16 +14,16 @@ const Index = () => {
         <Hero />
         <About />
         <Skills />
-        <Projects />
+        <Experience />
+        <Education />
         <Contact />
-        <HireMe/>
       </main>
       
       {/* Footer */}
       <footer className="bg-card border-t border-border py-8">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground">
-            © 2024 Bhagwat Developer. Built with React, TypeScript & Tailwind CSS.
+            © {new Date().getFullYear()} Maneesha Yadav. Placement, training & quality professional.
           </p>
         </div>
       </footer>
